@@ -55,7 +55,6 @@ public class MainPage extends AbstractPage{
     @Step
     public void clickOnYellowTailLogo(){
         yellowTailLogo.click();
-        waitForLoadableElement();
     }
 
     public void clickOnGlobeIcon(){
@@ -112,7 +111,7 @@ public class MainPage extends AbstractPage{
     @Step
     public WebElement getMainMenu() {
         return mainMenu;
-    }
+     }
 
     public WebElement getContentWelcome() {
         return contentWelcome;

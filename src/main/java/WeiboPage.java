@@ -1,24 +1,28 @@
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.DriverProvider;
 
+import java.time.Duration;
 import java.util.Set;
 
 public class WeiboPage extends AbstractPage{
     public WeiboPage() {
         super();
+        waitForLoadableElement();
     }
 
     @Override
     public void waitForLoadableElement() {
-
+        //WebElement explicitWait = (new WebDriverWait(DriverProvider.INSTANCE.getDriver(), Duration.ofSeconds(10)))
     }
 
     @Step
     public String getTitle() {
-        return getTitle();
+        return DriverProvider.INSTANCE.getDriver().getTitle();
     }
 
     @Step

@@ -1,4 +1,4 @@
-import com.sun.org.glassfish.gmbal.Description;
+import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -46,7 +46,6 @@ public class MainPageTest extends JunitRunner{
         mainPage.clickOnYellowTailLogo();
         mainPage.waitForLoadableElement();
         //5. Verify that Menu button is visible
-        mainPage.getMainMenu();
         Assertions.assertTrue(mainPage.getMainMenu().isDisplayed());
     }
 

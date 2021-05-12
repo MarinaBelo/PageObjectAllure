@@ -2,18 +2,23 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.DriverProvider;
 
+import java.time.Duration;
 import java.util.List;
 
 public class CocktailsPage extends AbstractPage{
     public CocktailsPage() {
         super();
+        waitForLoadableElement();
     }
 
     @Override
     public void waitForLoadableElement() {
-
+        WebElement explicitWait = (new WebDriverWait(DriverProvider.INSTANCE.getDriver(), Duration.ofSeconds(10)))
+                .until(ExpectedConditions.visibilityOf(getSelect()));
     }
 
     @FindBy(css = "[aria-label*=\"Raspberry Rosé\"]")
@@ -31,6 +36,7 @@ public class CocktailsPage extends AbstractPage{
     @FindBy(css = "[data-types=\"bubbles\"]")
     List<WebElement> sparklingRecipes;
 
+    @Step
     public void clickOnSelect(){
         select.click();
     }

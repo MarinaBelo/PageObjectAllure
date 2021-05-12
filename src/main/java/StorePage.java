@@ -1,14 +1,21 @@
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.DriverProvider;
+
+import java.time.Duration;
 
 public class StorePage extends AbstractPage{
     public StorePage() {
         super();
+        waitForLoadableElement();
     }
 
     @Override
     public void waitForLoadableElement() {
-
+        WebElement explicitWait = (new WebDriverWait(DriverProvider.INSTANCE.getDriver(), Duration.ofSeconds(10)))
+                .until(ExpectedConditions.visibilityOf(getSearchButton()));
     }
 
     @FindBy(css = "#locationName")

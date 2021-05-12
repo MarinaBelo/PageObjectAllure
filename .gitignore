@@ -2,7 +2,4 @@
 /allure-reports/*
 /target/*
 /*.iml/
-
-
-
-
+/allure-results/

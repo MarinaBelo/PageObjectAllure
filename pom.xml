@@ -3,7 +3,6 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>com.bilozertseva</groupId>
     <artifactId>YellowTailWinePageObject</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -57,7 +56,7 @@
                 <configuration>
                     <testFailureIgnore>false</testFailureIgnore>
                     <argLine>
-                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                     -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
                     <systemProperties>
                         <property>
@@ -87,16 +86,11 @@
                     <reportVersion>2.4.1</reportVersion>
                 </configuration>
             </plugin>
-            <plugin>
+             <!--<plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M4</version>
-                <!--                <configuration>
-                                    <systemPropertyVariables>
-                                        <propertyName>firefox</propertyName>
-                                    </systemPropertyVariables>
-                                </configuration>-->
-            </plugin>
+             </plugin>-->
         </plugins>
     </build>
 </project>
